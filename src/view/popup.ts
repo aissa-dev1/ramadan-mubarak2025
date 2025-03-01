@@ -73,7 +73,6 @@ export class PopUp {
       this.closeButton,
       this.followAndCodeContainer
     );
-    this.open();
   }
 
   open() {
