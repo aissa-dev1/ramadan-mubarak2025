@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "./styles";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --board: #020305;
+  --board-foreground: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Roboto", serif;
+}
+
+canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--board);
+  border-radius: 0;
+}
+
+.search_for_moon_text {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: var(--board-foreground);
+  text-align: center;
+  pointer-events: none;
+}
+
+.follow_me_text {
+  color: var(--board-foreground);
+}
+
+.follow_me_text a {
+  color: var(--board-foreground);
+}
+
+@media screen and (min-width: 600px) {
+  canvas {
+    border-radius: 10px;
+  }
+
+  .search_for_moon_text {
+    color: var(--foreground);
+    font-size: 30px;
+  }
+}
