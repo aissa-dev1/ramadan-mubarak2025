@@ -36,7 +36,7 @@ export class View {
     this.animate();
 
     this.searchForMoonTextElm.classList.add("search_for_moon_text");
-    this.searchForMoonTextElm.textContent = "Search for Ramadan moon";
+    this.searchForMoonTextElm.textContent = "Search for Ramadan moon 🔍🌕";
 
     document.addEventListener("pointerdown", () => {
       MusicController.playMainMusic();
