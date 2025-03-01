@@ -13,7 +13,9 @@ export class PopUp {
   private img = document.createElement("img");
   private title = document.createElement("h2");
   private description = document.createElement("p");
+  private buttonsContainer = document.createElement("div");
   private closeButton = document.createElement("button");
+  private refreshButton = document.createElement("button");
   private followAndCodeContainer = document.createElement("div");
   private followMeText = document.createElement("p");
   private followMeLink = document.createElement("a");
@@ -29,6 +31,7 @@ export class PopUp {
 
   init() {
     this.container.classList.add("popup_container");
+    this.buttonsContainer.classList.add("buttons_container");
     this.followAndCodeContainer.classList.add("follow_and_code_container");
 
     this.img.src = "/ramadan-mubarak.jpg";
@@ -44,6 +47,7 @@ export class PopUp {
     this.description.textContent =
       "Wishing you and your family a blessed Ramadan filled with peace joy, and prosperity.";
     this.closeButton.textContent = "Close";
+    this.refreshButton.textContent = "Refresh";
     this.followMeLink.textContent = "@aissa.creates";
     this.seeSourceCodeLink.textContent = "source code";
 
@@ -53,7 +57,15 @@ export class PopUp {
       this.close();
       SFXController.playClick();
     });
+    this.refreshButton.addEventListener("click", () => {
+      this.close();
+      setTimeout(() => {
+        window.location.reload();
+      }, this.animationDuration);
+      SFXController.playClick();
+    });
 
+    this.buttonsContainer.append(this.closeButton, this.refreshButton);
     this.followMeText.append(
       document.createTextNode("Follow me on "),
       this.followMeLink
@@ -70,7 +82,7 @@ export class PopUp {
       this.img,
       this.title,
       this.description,
-      this.closeButton,
+      this.buttonsContainer,
       this.followAndCodeContainer
     );
   }
